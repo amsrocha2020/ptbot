@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="bot.ico">
+
+<title>PTbot - Contacts</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!--Font-Awesome-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Custom styles for this template -->
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#"><img class="img-responsive" src="bot.png" style="width:25px;"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Services </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="rules.html">Terms and Rules</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="delegation.html">Delegate <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contacts.html">Contacts</a>
+      </li>
+    </ul>
+    <span id="steem_price">1 STEEM = US$ ... </span>
+    <span id="sbd_price">1 SBD = US$ ...</span>
+  </div>
+</nav>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron img-back">
+  </div>
+
+  <div class="container">
+
+
+    <div class="row">
+
+      <!-- SP Delegator -->
+      <div class="col-md-7 " id="delegator-manager" >
+
+        <div class="title-sp-delegator" style="padding-bottom:15px;" >
+          <div class="w3-content w3-animate-fading w3-padding br-banner-gold w3-xlarge " >
+            Delegate STEEM POWER to @ptbot
+          </div>
+        </div>
+
+        <div class="w3-padding-16 w3-twothird " style="border-radius:8px">
+          <div class="w3-card-4 w3-white w3-center " style="border-radius:8px">
+            <ul class="w3-ul w3-border-0 w3-hover-shadow w3-center" style="border-radius:8px 8px 0 0">
+              <div class="w3-theme-l3" style="margin-bottom:15px;">
+                <span class="w3-xlarge">Choose any STEEM POWER and delegate it</span>
+              </div>
+              <div class="w3-left-align ">
+                <div style="display:inline-block;">
+                  <label for="delegator" class="w3-large" ><b>Delegator:&nbsp;</b></label>
+                </div>
+
+                <div style="display:inline-block;">
+
+                  <div class="br-del-input" style="min-width:210px;margin:auto">
+                    <span>@</span><input type="text" class="w3-input" id="delegator" placeholder="Enter here your user name" style="width:200px;">
+                  </div>
+                </div>
+
+                <div style="display:inline-block;">
+                  <span id="delegator_ok" class="fa fa-check validation-icon-ok w3-xlarge" aria-hidden="true" style="display:none;color:green"></span>
+                  <span id="delegator_bad" class="fa fa-times validation-icon-error w3-xlarge" aria-hidden="true" style="display:none;color:red"></span>
+                </div>
+                <div style="display:inline-block;">
+                  <button id="btn_load" class="btn btn-warning btn-xs" onclick="" >Load</button>
+                </div>
+              </div>
+                <div id="details" style="display: none;margin-top:15px;">
+
+                  <div class="panel panel-primary plain">
+                    <div class="panel-body">
+
+                      <div class="w3-col.s6" style="display:none">
+                        <div class="input-group">
+                          <div class="w3-third w3-right-align">
+                            <label class="control-label" for="delegatee" ><b>Delegatee:</b></label>
+                            <span class="w3-xlarge">&nbsp;@</span>
+                          </div>
+                          <div class="w3-third">
+                            <input type="text" class="form-control" id="delegatee" placeholder="Delegatee Account Name">
+                          </div>
+                          <div class="w3-third w3-left-align">
+                            <span id="delegatee_ok" class="fa fa-check validation-icon-ok color-green" aria-hidden="true" style="display: none;"></span>
+                            <span id="delegatee_bad" class="fa fa-times validation-icon-error color-red" aria-hidden="true" style="display: none;"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="w3-container" style="border-bottom:1px solid #ccc">
+                          <p align="left" style="color:#444;padding:0;margin:0">
+                            <b>Existing SP Delegated to @ptbot:</b>
+                          </p>
+                            <b><div class="w3-text-black w3-xlarge w3-left" style="padding-left:14px" id="existing_amount"></div></b>
+                      </div>
+
+                      <div class="w3-container" style="border-bottom:1px solid #ccc;padding-bottom:8px;">
+                          <p align="left" style="color:#444;padding:0;margin:0">
+                            <b>SP available in your account to be delegated:</b>
+                          </p>
+                            <b><div class="w3-col w3-text-black w3-xlarge w3-left-align " style="padding-left:14px" id="max_delegation_amount"></div></b>
+                            <div class="w3-col w3-text-black w3-xlarge w3-left " style="padding-left:14px:min-width:100%" >
+                              <button id="delegate_max" class="btn btn-info w3-left" onclick="return delegateMax();">
+                                Delegate the total available
+                              </button>
+                            </div>
+                      </div>
+
+                      <div class="w3-container" style="border-bottom:1px solid #ccc;padding-bottom:8px;">
+                        <div class="input-group" style="min-width:100%">
+                          <div class="w3-container" style="min-width:100%;padding:0">
+                            <p align="left" style="color:#444;padding:0;margin:0">
+                              <label class="control-label" for="amount" >
+                              <b>SP amount to delegate:</b><br>(Existing SP Delegated + SP amount to be increased)
+                              </label>
+                            </p>
+                          </div>
+                          <div class="w3-container w3-text-black w3-xlarge w3-left " style="min-width:50%" >
+                              <div class="w3-container" style="padding-left:0;padding-bottom:8px">
+                                <input type="text" class="w3-input w3-left" id="amount" placeholder="Enter here the total amount of SP to be delegated" style="background:#ccc;border-radius:8px;padding-bottom:8px;padding-left:0;border:1px solid #444">
+                              </div>
+                              <div class="w3-container" style="margin-top:8px;padding-left:0">
+                                <button id="btn_submit" class="btn btn-success w3-left" style="padding-top:8px" onclick="delegate($('#delegator').val(), 'ptbot', $('#amount').val()); return false;">Delegate!</button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="w3-col.s3">
+                        <div class="col-sm-10">
+                          <div id="warning" style="color: red; display: none;">ERROR: You have chosen to delegate more than the maximum available. If you do not have enough SP in the account it will become unusable.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          &nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <!-- Informations -->
+      <!--<div class="col-md-5" style="border-radius:8px">
+        <div class="w3-card-4 w3-white w3-center " style="border-radius:8px">
+          <ul class="w3-ul w3-border-0 w3-center"  style="border-radius:8px 8px 0 0">
+            <li class="w3-theme-l3" style="border-radius:8px 8px 0px 0px">
+              <span class="w3-xlarge">SP Delegation Instructions</span>
+            </li>
+          </ul>
+          <ul class="w3-ul w3-border w3-justify " style="border-radius:0px 0px 8 8">
+            <ol>
+              <li>
+                Enter your steemit user name in the field <b>Delegator</b> and then press the <b><i>Load</i></b> yellow button.
+              </li>
+              <li>
+                A section will pop up showing: <ol type="a"><li> the existing SP amount you have already delegated to the bot, if any;</li><li> the total SP amount available in your account ready to be delegated to our bot;</li><li>an input field to enter the new total SP amount to be delegated to the bot.</li></ol>
+              </li>
+              <li>
+                To correctly delegate SP to us, you <b>must increase the Steem Power (SP) in total</b>.  For instance, if you have delegated 1000 SP to us and you want to delegate 500 more, you need to put down 1500 in the <b>SP amount to delegate</b> box.  <b>Do not</b> just put down 500, or 500 will be subtracted and will become unavailable for you during the next 7 days.
+              </li>
+              <li>
+                Also, you have the option to <b>delegate the total SP available</b> in your Steemit account, by clicking in the blue button <b>Delegate the total available</b>. We <b>do not recommend</b> one to delegate all SP available in his/her account because of the "Bandwidth limit issue". So, because of that, this feature of our <b>delegation tool</b> calculates the maximum SP amount you can delegate without freezing your account, so leaving a minimum SP necessary for that.
+              </li>
+              <li>
+                Next click the green button named <b><i>Delegate!</i></b> and you will be put over to <b>Steemconnect.com</b>.  Authorize it with your steemit user name and active key, not your master key, as always a precaution.  Also, always <b>make sure your on the Steemconnect.com website</b>.
+              </li>
+            </ol>
+          </ul>
+        </div>
+      </div>-->
+
+
+    <br/>
+  </div>
+    <br/>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+  <div class="back-top-list" style="display: block;">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+  </div>
+
+</main>
+
+<footer class="container">
+  <p>&copy; ptbot 2018</p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- Scripts Steemit -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script src="assets/countdown/jquery.countdown.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/sc2.min.js"></script>
+<script src="scripts/utils.js"></script>
+<script src="scripts/ptbot_new.js"></script>
+
+<script type="text/javascript">
+    steem.api.setOptions({ transport: 'http', url: 'https://api.steemit.com' });
+    updateSteemVariables();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  var delegator = null;
+  var existing_delegation = null;
+  var delegations = [];
+
+  function delegate(delegator_name, delegatee, amount) {
+    if (typeof amount === 'string' || amount instanceof String)
+      amount = parseFloat(amount.replace(/,/g, ''));
+
+    $('#warning').hide();
+
+    var existing_sp = (existing_delegation ? parseFloat(existing_delegation.vesting_shares) / 1000000 * steem_per_mvests : 0);
+    if ((amount - existing_sp) > (delegator.available_sp + 1)) {
+      $('#warning').show();
+      return;
+    }
+
+    var vests = (parseFloat(amount) / steem_per_mvests * 1000000).formatMoney(6, '.', '');
+
+    var url = 'https://v2.steemconnect.com/sign/delegate-vesting-shares?delegator=' + delegator_name + '&delegatee=' + delegatee + '&vesting_shares=' + vests + ' VESTS';
+    window.open(url);
+  }
+
+  function loadAccount(account, cb) {
+    steem.api.getAccounts([account], function(err, result) {
+      cb(result[0]);
+    });
+  }
+
+  function checkAccount(id, callback) {
+    loadAccount($('#' + id).val(), function (account) {
+      var ok = $('#' + id + '_ok');
+      var bad = $('#' + id + '_bad');
+      ok.hide();
+      bad.hide();
+$('#existing_amount').text((parseFloat(0).formatMoney(3)));
+$('#amount').val((parseFloat(0.000)).formatMoney(3));
+existing_delegation = null;
+
+      if (account && account.name) {
+        ok.show();
+
+        if(id == 'delegator') {
+          delegator = account;
+          loadDelegations($('#delegator').val(), callback);
+          $('#details').show();
+          var power_down = (parseFloat(account.to_withdraw) - parseFloat(account.withdrawn)) / 1000000;
+          delegator.available_sp = Math.max((parseFloat(account.vesting_shares) - parseFloat(account.delegated_vesting_shares) - power_down) / 1000000 * steem_per_mvests - 6, 0);
+          $('#max_delegation_amount').text(delegator.available_sp.formatMoney(3));
+        } else if(id == 'delegatee') {
+          existing_delegation = delegations.find(function(d) { return d.delegatee == account.name; });
+
+          if(existing_delegation) {
+            $('#amount').val((parseFloat(existing_delegation.vesting_shares) / 1000000 * steem_per_mvests).formatMoney(3));
+            $('#existing_amount').text((parseFloat(existing_delegation.vesting_shares) / 1000000 * steem_per_mvests).formatMoney(3));
+          } else {
+            $('#existing_amount').text((parseFloat(0).formatMoney(3)));
+            $('#amount').val((parseFloat(0)).formatMoney(3));
+          }
+
+          if(callback) {
+            callback();
+          }
+        }
+      } else {
+        bad.show();
+$('#max_delegation_amount').text((0).formatMoney(3));
+      }
+    });
+  }
+
+  function loadDelegations(account, callback) {
+    steem.api.getVestingDelegations(account, -1, 100, function(err, result) {
+      delegations = result;
+      result.sort(function(a, b) { return parseFloat(b.vesting_shares) - parseFloat(a.vesting_shares); });
+      populateDelegations(result);
+
+      if(callback)
+        callback();
+    });
+  }
+
+  function delegateMax() {
+    var existing_sp = (existing_delegation ? parseFloat(existing_delegation.vesting_shares) / 1000000 * steem_per_mvests : 0);
+    $('#amount').val((delegator.available_sp + existing_sp).formatMoney(3));
+    return false;
+  }
+
+  $('#delegator').focusout(function (e) { checkAccount('delegator'); });
+  $('#delegatee').focusout(function (e) { checkAccount('delegatee'); });
+  $(function () { $('[data-toggle="tooltip"]').tooltip() });
+
+  function populateDelegations(delegations) {
+    var table = $('#delegations_table tbody');
+    table.empty();
+
+    delegations.forEach(function (delegation) {
+      if(delegation.delegatee == "ptbot") {
+
+        $('#delegatee').val(delegation.delegatee); checkAccount('delegatee');
+        document.location.href = '#update';
+      }
+    });
+  }
+
+  $(function() {
+    // Initialize and try to log in with SteemConnect V2
+    var token = getURLParameter('access_token') ? getURLParameter('access_token') : localStorage.getItem('access_token');
+    sc2.init({
+      baseURL: 'https://v2.steemconnect.com',
+      app: 'bottracker.app',
+      accessToken: token,
+      callbackURL: 'https://steembottracker.com/delegation.html',
+      scope: ['login', 'vote']
+    });
+
+    var user = null;
+    sc2.me(function (err, result) {
+      if (result && !err) {
+        console.log(result);
+        user = result.account;
+        $('#btn_login').hide();
+        $('#user_info').show();
+        $('#login_info').text('@' + user.name);
+        localStorage.setItem('access_token', token);
+        $('#delegator').val(user.name);
+        checkAccount('delegator');
+      } else {
+        $('#btn_login').show();
+        $('#user_info').hide();
+      }
+    });
+
+    $('#btn_logout').click(function () {
+      localStorage.removeItem('access_token');
+      window.location.href = window.location.pathname;
+    });
+
+    if(getURLParameter('delegator')){
+      $('#delegator').val(getURLParameter('delegator'));
+
+      checkAccount('delegator', function() {
+        if(getURLParameter('delegatee')){
+          $('#delegatee').val(getURLParameter('delegatee'));
+          checkAccount('delegatee', function() {
+            if(getURLParameter('amount')){
+              var existing_sp = (existing_delegation ? parseFloat(existing_delegation.vesting_shares) / 1000000 * steem_per_mvests : 0);
+              $('#amount').val((parseFloat(getURLParameter('amount')) + existing_sp).formatMoney(3));
+            }
+          });
+        }
+      });
+    } else if(getURLParameter('delegatee')) {
+      $('#delegatee').val(getURLParameter('delegatee'));
+      checkAccount('delegatee', function() {
+        if(getURLParameter('amount')){
+          var existing_sp = (existing_delegation ? parseFloat(existing_delegation.vesting_shares) / 1000000 * steem_per_mvests : 0);
+          $('#amount').val((parseFloat(getURLParameter('amount')) + existing_sp).formatMoney(3));
+        }
+      });
+    }
+  });
+</script>
+
+
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+  } else {
+      x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
