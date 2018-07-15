@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="bot.ico">
+
+<title>PTbot - Services</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!--Font-Awesome-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Custom styles for this template -->
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/countdown/jquery.countdown.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<a class="navbar-brand" href="#"><img class="img-responsive" src="bot.png" style="width:25px;"/></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">Services <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="rules.html">Terms and Rules</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="contacts.html">Contacts</a>
+    </li>
+  </ul>
+
+  <span id="steem_price">1 STEEM = US$ ... </span>
+  <span id="sbd_price">1 SBD = US$ ...</span>
+
+  <!--<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>-->
+</div>
+</nav>
+
+<main role="main">
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron img-back">
+
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+    <!--<h1 class="display-3">Informations</h1>-->
+    <p>The ptbot is a bid-bot and was created by a team of Portuguese with the intention of growing all the users that enter the Steemit community.</p>
+  </div>
+  </div>
+  <br/>
+
+
+  <!-- Example row of columns -->
+  <div class="row current-round">
+  <!--<div class="col-md-12">
+    <h2 class="">Bid Return On Investment (ROI)</h2>
+  </div>-->
+
+  <div class="col-md-12 " id="current_round">
+    <div class="w3-ul br-ul">
+      <div class="col-lg-12">
+        <h2 class="text-center">Current Round</h2>
+        <div class="countdownHolder" id="countdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <!--<p id="steem_price">1 STEEM = US$ ... </p>
+    <p id="sbd_price">1 SBD = US$ ...</p>-->
+    <img class="img-ptbot" src="assets/css/ptbot.png" />
+  </div>
+
+    <div class="col-md-4">
+      <p class="" id="cur_round_vote">... Total Vote Value</p>
+      <p class="" id="cur_round_vote_weight">100% Weight</p>
+      <p class="" id="cur_round_bids">... Total Bids</p>
+      <p class="" id="cur_round_value">... Total Bid Value</p>
+      <p class="" style="border-radius:0 0 8px 8px">
+        <button class="btn btn-warning btn-xs" id="send_bid">Send Bid</button>
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <p class="">
+        <h2 class="" id="cur_round_roi">0%</h2>
+        <span class="">ROI (After Curation)</span>
+      </p>
+      <p class="" style="color:red" id="max_profitable_bid">Max suggested bids for a 20% ROI: </p>
+    </div>
+  </div>
+
+<br/>
+
+<hr>
+
+<br/>
+
+  <!-- Example row of columns -->
+  <div class="row newline">
+    <div class="col-md-4">
+      <h2>Bid for Vote</h2>
+      <p>Take part in bidding for Votes every 24h. Votes are getting cast once the post is at least 30 minutes old. You will be redirected to steembottracker.com</p>
+      <p><a class="btn btn-secondary" href="https://steembottracker.com/" target="_blank" role="button">Bid for bot now &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>Steemit page</h2>
+      <p>You can follow the bot on the steemit platform and be always up to date with the new information we make available.</p>
+      <br/>
+      <p><a class="btn btn-secondary" href="https://steemit.com/@ptbot" target="_blank" role="button">Steemit page &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>Informations</h2>
+      <p>You can always contact the team that developed the bot if you have any doubts.</p>
+      <br/>
+      <br/>
+      <p><a class="btn btn-secondary" href="https://discord.gg/GaHahx9" role="button">Discord link &raquo;</a></p>
+    </div>
+  </div>
+
+  <hr>
+
+</div> <!-- /container -->
+
+<div class="back-top-list" style="display: block;">
+  <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+
+</main>
+
+<footer class="container">
+<p>&copy; ptbot 2018</p>
+</footer>
+
+<div class="modal fade " id="bid_details_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Send a bid to @<span id="bid_details_dialog_bot_name"></span>!</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body" style="margin: 20px 50px;">
+          <div class="form-horizontal">
+            <div class="form-group">
+              <label for="bid_details_account_name">Your Steem Account Name</label>
+              <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" id="bid_details_account_name" placeholder="Account Name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bid_details_bid_amount">Bid Amount</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="bid_details_bid_amount" placeholder="0.5" value="0.5" style="display: inline; width: 75px;">
+                <select id="bid_details_bid_currency" class="form-control" style="display: inline; width: 100px; margin-left: 5px;">
+                  <option value="SBD">SBD</option>
+                  <option value="STEEM">STEEM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bid_details_post_url">Your post URL</label>
+              <input type="url" class="form-control" id="bid_details_post_url" placeholder="Post URL">
+            </div>
+
+            <div class="form-group">
+              <label for="bid_details_post_url">Your Recent Posts</label>
+              <span id="bid_details_recent_posts">None Found</span>
+            </div>
+
+            <div class="alert alert-danger" id="bid_details_error"></div>
+
+            <div class="form-group" style="text-align: center;">
+              <button id="bid_details_btn_submit" class="btn btn-default">Check and Submit!</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade modal-style2 " id="bid_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel" style="text-align: center;">Send a bid to @<span id="bid_dialog_bot_name"></span>!</h4>
+          </div>
+          <div class="modal-body" style="text-align: center;">
+            <iframe id="bid_dialog_frame" frameborder="0" src="" style="border: none; width: 95%;" height="560"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- Scripts Steemit -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script src="assets/countdown/jquery.countdown.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/sc2.min.js"></script>
+<script src="scripts/utils.js"></script>
+<script src="scripts/ptbot_new.js"></script>
+
+<script type="text/javascript">
+    steem.api.setOptions({ transport: 'http', url: 'https://api.steemit.com' });
+    updateSteemVariables();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

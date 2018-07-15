@@ -1,0 +1,87 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+  /*background-color: #cecece;*/
+  background-color: #fff;
+}
+
+/*nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark {
+    background-color: #000 !important;
+}*/
+
+.img-back{
+  background-image: url(ptbot_cover.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.btn-secondary{
+  color: #fff;
+  background-color: #ac313f;
+  border-color: #ac313f;
+}
+
+.line {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+div#current_round {
+    margin-bottom: 30px;
+}
+
+#steem_price , #sbd_price{
+    color:#fff;
+}
+
+#steem_price{
+    margin-right: 10px;
+}
+
+.img-ptbot{
+  width: 100%;
+}
+
+.row.current-round {
+    margin-bottom: 30px;
+}
+
+button#send_bid {
+    width: 100%;
+}
+
+.modal-dialog {
+    max-width: 900px;
+    margin: 1.75rem auto;
+}
+
+button#bid_details_btn_submit {
+    background: #5a6268;
+    color: #fff;
+}
+
+#maps {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.back-top-list {
+    font-size: 15px;
+    text-align: center;
+    background: #fff;
+    line-height: 46px;
+    position: fixed;
+    z-index: 99999;
+    bottom: 15px;
+    right: 15px;
+    height: 44px;
+    width: 44px;
+    border: 1px solid #999;
+    display:none;
+  }
+
+.back-top-list:hover {
+    cursor: pointer;
+}
