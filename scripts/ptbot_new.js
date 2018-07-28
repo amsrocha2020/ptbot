@@ -30,7 +30,7 @@ $(function () {
 
     //$.get('https://steembottracker.com/otherbots.json', function (data) { other_bots = data; });
 
-    try {
+    /*try {
         if (Notification && Notification.permission !== "granted")
             Notification.requestPermission();
     } catch (err) { }
@@ -46,7 +46,7 @@ $(function () {
                 });
             }
         } catch (err) { }
-    }
+    }*/
 
     function loadPrices() {
       // Load the current prices of STEEM and SBD
@@ -462,10 +462,11 @@ $(function () {
         // Mandar popup notificando para usuarios
         //if ((bid_sbd > 0 || bid_steem > 0) && bot.next < 0.16 * HOURS && bot.last > 0.5 * HOURS) {
             //row.addClass('green-bg');
+            /*comentado 2018-07-28
             if (!bot.notif) {
                 sendNotification(bot.name, bid_sbd);
                 bot.notif = true;
-            }
+            }*/
         //}
 //
 
