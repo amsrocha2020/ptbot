@@ -66,6 +66,7 @@ $(function () {
 
     var first_load = true;
     function loadBotInfo() {
+
       var bots_to_load = bot_names;
 
       if (!first_load) {
@@ -826,6 +827,8 @@ $(function () {
       loadUserBids();
     });
 
+    loadUserBids();
+
     function loadUserBids() {
       steem.api.getAccountHistory(user.name, -1, 1000, function (err, result) {
         var bids = [];
@@ -888,6 +891,7 @@ $(function () {
       var table = $('#user_bids_table tbody');
       table.empty();
       $('#user_bids_name').text(user.name);
+      console.log(user.name);
 
       bids.reverse();
 
